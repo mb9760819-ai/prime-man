@@ -25,12 +25,9 @@ object-fit:contain;
 </div>
 </nav>
 
-<!-- HEADER WITH LOGO -->
+<!-- HEADER -->
 <header class="bg-dark py-5 text-center">
-
-<!-- ضع هنا صورة اللوغو -->
 <img src="logo.png" class="logo">
-
 </header>
 
 <!-- PRODUCTS -->
@@ -60,7 +57,7 @@ object-fit:contain;
 </div>
 </div>
 </div>
- 
+
 <!-- PRODUCT 2 -->
 <div class="col-md-4">
 <div class="card">
@@ -103,18 +100,106 @@ object-fit:contain;
 
 <input type="hidden" id="product">
 
+<!-- NAME -->
 <div class="mb-2">
 <input class="form-control" id="name" placeholder="الاسم واللقب" required>
 </div>
 
+<!-- PHONE -->
 <div class="mb-2">
 <input class="form-control" id="phone" placeholder="رقم الهاتف" required>
 </div>
 
+<!-- SIZE -->
 <div class="mb-2">
-<input class="form-control" id="state" placeholder="الولاية" required>
+<select class="form-control" id="size" required>
+<option value="">اختر المقاس</option>
+<option value="L / 15">L / 15</option>
+<option value="XL / 17">XL / 17</option>
+<option value="XXL / 19">XXL / 19</option>
+<option value="XXXL / 21">XXXL / 21</option>
+</select>
 </div>
 
+<!-- STATE -->
+<div class="mb-2">
+<select class="form-control" id="state" required>
+
+<option value="">اختر الولاية</option>
+<option>(01) أدرار</option>
+<option>(02) الشلف</option>
+<option>(03) الأغواط</option>
+<option>(04) أم البواقي</option>
+<option>(05) باتنة</option>
+<option>(06) بجاية</option>
+<option>(07) بسكرة</option>
+<option>(08) بشار</option>
+<option>(09) البليدة</option>
+<option>(10) البويرة</option>
+<option>(11) تمنراست</option>
+<option>(12) تبسة</option>
+<option>(13) تلمسان</option>
+<option>(14) تيارت</option>
+<option>(15) تيزي وزو</option>
+<option>(16) الجزائر العاصمة</option>
+<option>(17) الجلفة</option>
+<option>(18) جيجل</option>
+<option>(19) سطيف</option>
+<option>(20) سعيدة</option>
+<option>(21) سكيكدة</option>
+<option>(22) سيدي بلعباس</option>
+<option>(23) عنابة</option>
+<option>(24) قالمة</option>
+<option>(25) قسنطينة</option>
+<option>(26) المدية</option>
+<option>(27) مستغانم</option>
+<option>(28) المسيلة</option>
+<option>(29) معسكر</option>
+<option>(30) ورقلة</option>
+<option>(31) وهران</option>
+<option>(32) البيض</option>
+<option>(33) إليزي</option>
+<option>(34) برج بوعريريج</option>
+<option>(35) بومرداس</option>
+<option>(36) الطارف</option>
+<option>(37) تندوف</option>
+<option>(38) تيسمسيلت</option>
+<option>(39) الوادي</option>
+<option>(40) خنشلة</option>
+<option>(41) سوق أهراس</option>
+<option>(42) تيبازة</option>
+<option>(43) ميلة</option>
+<option>(44) عين الدفلى</option>
+<option>(45) النعامة</option>
+<option>(46) عين تموشنت</option>
+<option>(47) غرداية</option>
+<option>(48) غليزان</option>
+<option>(49) تيميمون</option>
+<option>(50) برج باجي مختار</option>
+<option>(51) أولاد جلال</option>
+<option>(52) بني عباس</option>
+<option>(53) عين صالح</option>
+<option>(54) عين قزام</option>
+<option>(55) تقرت</option>
+<option>(56) جانت</option>
+<option>(57) المغير</option>
+<option>(58) المنيعة</option>
+<option>(59) آفلو</option>
+<option>(60) بريكة</option>
+<option>(61) القنطرة</option>
+<option>(62) بير العاتر</option>
+<option>(63) العريشة</option>
+<option>(64) قصر الشلالة</option>
+<option>(65) عين وسارة</option>
+<option>(66) مسعد</option>
+<option>(67) قصر البخاري</option>
+<option>(68) بوسعادة</option>
+<option>(69) الأبيض سيدي الشيخ</option>
+
+</select>
+</div>
+
+<!-- DELIVERY TYPE -->
 <div class="mb-2">
 <select class="form-control" id="type">
 <option>للمنزل</option>
@@ -147,7 +232,6 @@ Phone: 0676454829
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- EMAILJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
@@ -174,6 +258,8 @@ name:document.getElementById("name").value,
 
 phone:document.getElementById("phone").value,
 
+size:document.getElementById("size").value,
+
 state:document.getElementById("state").value,
 
 type:document.getElementById("type").value,
@@ -185,6 +271,8 @@ email:"mhmdbusniss@gmail.com"
 .then(function(){
 
 alert("تم ارسال الطلب بنجاح");
+
+document.getElementById("orderForm").reset();
 
 });
 
